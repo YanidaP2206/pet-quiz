@@ -125,7 +125,7 @@
         container: container,
         renderer: 'svg',
         loop: true,
-        autoplay: false, // disable autoplay
+        autoplay: false,
         path: path
       });
       anim.play(); // explicitly start playback
@@ -182,23 +182,59 @@
           datasets: [{
             label: 'Answer Count',
             data: Object.values(counts),
-            backgroundColor: ['#9b59b6','#4CAF50','#3498db','#e67e22','#d35400','#27ae60']
+            backgroundColor: [
+              '#9b59b6', // cat
+              '#4CAF50', // dog
+              '#3498db', // bird
+              '#e67e22', // rabbit
+              '#d35400', // fox
+              '#27ae60'  // turtle
+            ],
+            borderRadius: 8,
+            barThickness: 40
           }]
         },
         options: {
           responsive: true,
           plugins: {
             legend: { display: false },
-            title: { display: true, text: 'Your Answer Breakdown' }
+            title: { 
+              display: true, 
+              text: 'Your Answer Breakdown',
+              font: { size: 18, weight: 'bold' }
+            },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  return ` ${context.parsed.y} answers`;
+                }
+              }
+            }
           },
-          scales: { y: { beginAtZero: true, precision: 0 } }
+          scales: { 
+            y: { 
+              beginAtZero: true,
+              ticks: {
+                precision: 0,
+                callback: function(value) {
+                  return Number.isInteger(value) ? value : '';
+                }
+              },
+              grid: { color: '#eee' }
+            },
+            x: { grid: { display: false } }
+          },
+          animation: {
+            duration: 1200,
+            easing: 'easeOutBounce'
+          }
         }
       });
     }
 
     if (window.confetti) {
       const duration = 3000;
-      const end = Date.now() + duration;
+     const end = Date.now() + duration;
       (function frame() {
         confetti({ particleCount: 5, angle: 60, spread: 55, origin: { x: 0 } });
         confetti({ particleCount: 5, angle: 120, spread: 55, origin: { x: 1 } });
@@ -210,8 +246,8 @@
   document.addEventListener('DOMContentLoaded', () => {
     const container = qs('.quiz-container');
     if (!container) return;
-	
-	    // If we are on the result page, initialize results
+    
+    // If we are on the result page, initialize results
     if (qs('#result-area') || qs('#scoreChart')) {
       initResultPage();
       return;
