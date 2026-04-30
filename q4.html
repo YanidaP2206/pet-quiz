@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Question 4</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="quiz-container" role="main" data-progress="80">
+    <div class="header">
+      <div>
+        <div class="title">Question 4 of 5</div>
+        <div class="meta">Pet Personality Quiz</div>
+      </div>
+      <div class="progress"><div id="progressFill" class="progress-fill"></div></div>
+    </div>
+
+    <h1>What’s your social style?</h1>
+
+    <form>
+      <div class="options" role="radiogroup">
+        <label><input type="radio" name="q" value="cat"> Reserved and selective</label>
+        <label><input type="radio" name="q" value="dog"> Outgoing and friendly</label>
+        <label><input type="radio" name="q" value="bird"> Curious and chatty</label>
+        <label><input type="radio" name="q" value="rabbit"> Gentle and kind</label>
+        <label><input type="radio" name="q" value="fox"> Clever and witty</label>
+        <label><input type="radio" name="q" value="turtle"> Calm and thoughtful</label>
+      </div>
+
+      <div class="controls">
+        <button type="button" class="btn secondary" id="backBtn">Back ◀️</button>
+        <button type="submit" class="btn">Next ➡️</button>
+      </div>
+    </form>
+  <script src="quiz.js"></script>
+  </main>
+</body>
+</html>

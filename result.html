@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Your Pet Personality Result</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="quiz-container center" role="main">
+    <div class="header">
+      <div>
+        <div class="title">Quiz Complete</div>
+        <div class="meta">Here’s your result</div>
+      </div>
+      <div class="progress"><div class="progress-fill" style="width:100%"></div></div>
+    </div>
+
+    <h1 class="center">🎉 Pet Personality Result</h1>
+
+    <div id="result-area" aria-live="polite">
+      <!-- Lottie animation container -->
+      <div id="result-anim" role="img" aria-hidden="true"
+           style="width:260px;height:260px;margin:18px auto;"></div>
+
+      <!-- PNG fallback for no-JS -->
+      <noscript>
+        <img src="images/dog.png" alt="Result illustration"
+             style="max-width:220px;border-radius:12px;">
+      </noscript>
+
+      <p id="result-text"></p>
+      <p id="fun-fact"></p>
+    </div>
+
+    <div id="chart-container"><canvas id="scoreChart"></canvas></div>
+
+    <div class="center" style="margin-top:18px;">
+      <a class="btn secondary" href="index.html" onclick="localStorage.clear()">Restart Quiz 🔁</a>
+    </div>
+  </main>
+
+  <!-- Load libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js" defer></script>
+  <script src="quiz.js" defer></script>
+</body>
+</html>

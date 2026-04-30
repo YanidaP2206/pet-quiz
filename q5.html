@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Question 5</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="quiz-container" role="main" data-progress="100">
+    <div class="header">
+      <div>
+        <div class="title">Question 5 of 5</div>
+        <div class="meta">Pet Personality Quiz</div>
+      </div>
+      <div class="progress"><div id="progressFill" class="progress-fill"></div></div>
+    </div>
+
+    <h1>What’s your dream home?</h1>
+
+    <form>
+      <div class="options" role="radiogroup">
+        <label><input type="radio" name="q" value="cat"> Cozy and quiet</label>
+        <label><input type="radio" name="q" value="dog"> Spacious and lively</label>
+        <label><input type="radio" name="q" value="bird"> High up with a view</label>
+        <label><input type="radio" name="q" value="rabbit"> Surrounded by greenery</label>
+        <label><input type="radio" name="q" value="fox"> Stylish and clever design</label>
+        <label><input type="radio" name="q" value="turtle"> Peaceful and steady</label>
+      </div>
+
+      <div class="controls">
+        <button type="button" class="btn secondary" id="backBtn">Back ◀️</button>
+        <button type="submit" class="btn">See Result 🎉</button>
+      </div>
+    </form>
+  <script src="quiz.js"></script>
+  </main>
+</body>
+</html>

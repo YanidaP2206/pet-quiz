@@ -1,0 +1,104 @@
+:root{
+  --accent:#ff6f61;
+  --accent-2:#ff856f;
+  --bg-1:#ffe5e0;
+  --bg-2:#fff5f0;
+  --card-bg:#fff;
+  --muted:#666;
+  --radius:12px;
+  --shadow:0 6px 18px rgba(0,0,0,0.08);
+  --max-width:680px;
+  --transition:180ms;
+}
+
+html,body{
+  height:100%;
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: linear-gradient(90deg,var(--bg-1),var(--bg-2));
+  color:#222;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Card */
+.quiz-container{
+  max-width:var(--max-width);
+  margin:64px auto;
+  padding:28px;
+  background:var(--card-bg);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  text-align:left;
+  box-sizing:border-box;
+  transform-origin:center;
+  animation:cardIn 260ms ease;
+}
+
+/* Header */
+.header{display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.title{color:var(--accent);font-weight:700;font-size:1rem;}
+.meta{color:var(--muted);font-size:.92rem;}
+h1{color:#333;font-size:1.35rem;margin:18px 0;}
+.lead{color:var(--muted);margin-bottom:12px;}
+
+/* Progress */
+.progress{width:220px;background:#f1f1f1;border-radius:999px;height:12px;overflow:hidden;}
+.progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent-2));transition:width 450ms cubic-bezier(.2,.9,.2,1);}
+
+/* Options */
+.options{margin-top:8px;}
+.options label{
+  display:block;margin:10px 0;padding:12px;border:1px solid #e6e6e6;border-radius:10px;cursor:pointer;
+  transition:background var(--transition),transform var(--transition),box-shadow var(--transition);
+  user-select:none;text-align:left;font-size:1rem;color:#222;
+}
+.options label:hover{background:#fff0ee;transform:translateY(-2px);box-shadow:0 6px 14px rgba(255,111,97,0.06);}
+.options input[type="radio"]{margin-right:10px;accent-color:var(--accent);vertical-align:middle;}
+.options label.selected{background:linear-gradient(90deg,rgba(255,111,97,0.06),rgba(255,133,111,0.03));border-color:rgba(255,111,97,0.25);box-shadow:0 8px 20px rgba(255,111,97,0.06);transform:translateY(-2px);}
+
+/* Controls */
+.controls{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:20px;}
+.btn{padding:10px 18px;border-radius:10px;border:none;cursor:pointer;font-weight:600;color:#fff;background:var(--accent);box-shadow:0 8px 18px rgba(255,111,97,0.12);transition:transform var(--transition),background var(--transition);display:inline-flex;align-items:center;gap:8px;text-decoration:none;}
+.btn.secondary{background:#f3f3f3;color:#333;box-shadow:none;}
+.btn:hover{transform:translateY(-3px);background:var(--accent-2);}
+.btn.secondary:hover{transform:translateY(-2px);background:#ececec;}
+.btn[disabled]{opacity:.6;cursor:not-allowed;transform:none;box-shadow:none;}
+
+/* Result area */
+#result-area{text-align:center;margin-top:12px;}
+#result-anim{
+  width:260px;
+  height:260px;
+  margin:18px auto;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:visible; /* ensure SVG/canvas is visible */
+}
+#result-img{max-width:220px;width:40%;height:auto;display:block;margin:18px auto;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.06);}
+#result-text{font-size:1.05rem;font-weight:600;color:#333;margin-top:8px;}
+#fun-fact{color:var(--muted);margin-top:8px;font-size:.95rem;}
+#chart-container{margin-top:28px;width:100%;max-width:640px;margin-left:auto;margin-right:auto;}
+#scoreChart{width:100% !important;height:auto !important;}
+
+/* Utilities */
+.sr-only{position:absolute !important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap;}
+.center{text-align:center;}
+.muted{color:var(--muted);font-size:.95rem;}
+.small{font-size:.88rem;color:var(--muted);}
+
+/* Responsive */
+@media (max-width:420px){
+  .quiz-container{margin:28px 16px;padding:20px;border-radius:10px;}
+  .header{flex-direction:column;align-items:flex-start;gap:8px;}
+  .progress{width:100%;}
+  .controls{flex-direction:column-reverse;align-items:stretch;}
+  .btn{width:100%;justify-content:center;}
+  .btn.secondary{width:100%;}
+  #result-img{width:60%;}
+  #result-anim{width:200px;height:200px;}
+}
+
+/* Entrance animation */
+@keyframes cardIn{from{transform:translateY(6px);opacity:0}to{transform:translateY(0);opacity:1}}

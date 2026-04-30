@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Question 2</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="quiz-container" role="main" data-progress="40">
+    <div class="header">
+      <div>
+        <div class="title">Question 2 of 5</div>
+        <div class="meta">Pet Personality Quiz</div>
+      </div>
+      <div class="progress"><div id="progressFill" class="progress-fill"></div></div>
+    </div>
+
+    <h1>How do you handle stress?</h1>
+
+    <form>
+      <div class="options" role="radiogroup">
+        <label><input type="radio" name="q" value="cat"> Retreat alone</label>
+        <label><input type="radio" name="q" value="dog"> Talk it out</label>
+        <label><input type="radio" name="q" value="bird"> Go on an adventure</label>
+        <label><input type="radio" name="q" value="rabbit"> Find calm in nature</label>
+        <label><input type="radio" name="q" value="fox"> Think of clever solutions</label>
+        <label><input type="radio" name="q" value="turtle"> Slow down and reflect</label>
+      </div>
+
+      <div class="controls">
+        <button type="button" class="btn secondary" id="backBtn">Back ◀️</button>
+        <button type="submit" class="btn">Next ➡️</button>
+      </div>
+    </form>
+  <script src="quiz.js"></script>
+  </main>
+</body>
+</html>

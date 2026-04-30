@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Question 3</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="quiz-container" role="main" data-progress="60">
+    <div class="header">
+      <div>
+        <div class="title">Question 3 of 5</div>
+        <div class="meta">Pet Personality Quiz</div>
+      </div>
+      <div class="progress"><div id="progressFill" class="progress-fill"></div></div>
+    </div>
+
+    <h1>What’s your favorite food?</h1>
+
+    <form>
+      <div class="options" role="radiogroup">
+        <label><input type="radio" name="q" value="cat"> Fancy and delicate</label>
+        <label><input type="radio" name="q" value="dog"> Comfort food</label>
+        <label><input type="radio" name="q" value="bird"> Fresh and colorful</label>
+        <label><input type="radio" name="q" value="rabbit"> Crunchy veggies</label>
+        <label><input type="radio" name="q" value="fox"> Spicy or bold flavors</label>
+        <label><input type="radio" name="q" value="turtle"> Simple, wholesome meals</label>
+      </div>
+
+      <div class="controls">
+        <button type="button" class="btn secondary" id="backBtn">Back ◀️</button>
+        <button type="submit" class="btn">Next ➡️</button>
+      </div>
+    </form>
+  <script src="quiz.js"></script>
+  </main>
+</body>
+</html>

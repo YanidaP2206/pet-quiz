@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Question 1</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="quiz-container" role="main" aria-labelledby="q-title" data-progress="20">
+    <div class="header">
+      <div>
+        <div class="title">Question 1 of 5</div>
+        <div class="meta">Pet Personality Quiz</div>
+      </div>
+      <div class="progress" aria-hidden="true">
+        <div id="progressFill" class="progress-fill"></div>
+      </div>
+    </div>
+
+    <h1 id="q-title">What’s your ideal weekend?</h1>
+
+    <form>
+      <div class="options" role="radiogroup" aria-label="Ideal weekend options">
+        <label><input type="radio" name="q" value="cat"> Curling up with a book</label>
+        <label><input type="radio" name="q" value="dog"> Hanging out with friends</label>
+        <label><input type="radio" name="q" value="bird"> Exploring somewhere new</label>
+        <label><input type="radio" name="q" value="rabbit"> Gardening or relaxing outdoors</label>
+        <label><input type="radio" name="q" value="fox"> Trying something clever or creative</label>
+        <label><input type="radio" name="q" value="turtle"> Staying home and enjoying peace</label>
+      </div>
+
+      <div class="controls">
+        <button type="button" class="btn secondary" id="backBtn">Back ◀️</button>
+        <button type="submit" class="btn">Next ➡️</button>
+      </div>
+    </form>
+  <script src="quiz.js"></script>
+  </main>
+</body>
+</html>
