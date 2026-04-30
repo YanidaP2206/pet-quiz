@@ -1,4 +1,4 @@
-/* quiz.js */
+/*  quiz.js  */
 (function () {
   'use strict';
 
